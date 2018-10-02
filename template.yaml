@@ -7,7 +7,7 @@ Resources:
     Properties:
       Name: !Sub
         - ${ResourceName} From Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName}
-        - ResourceName: apiFE76C470
+        - ResourceName: newAPI
       StageName: !Ref StackeryEnvironmentAPIGatewayStageName
       DefinitionBody:
         swagger: '2.0'
@@ -18,9 +18,11 @@ Resources:
               x-amazon-apigateway-integration:
                 httpMethod: POST
                 type: aws_proxy
-                uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${function61D00F31.Arn}/invocations
+                uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${function8E6C5467.Arn}/invocations
               responses: {}
       EndpointConfiguration: REGIONAL
+    Metadata:
+      StackeryName: newAPI
   function8E6C5467:
     Type: AWS::Serverless::Function
     Properties:
