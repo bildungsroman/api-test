@@ -7,7 +7,7 @@ Resources:
     Properties:
       Name: !Sub
         - ${ResourceName} From Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName}
-        - ResourceName: newAPI
+        - ResourceName: myApi
       StageName: !Ref StackeryEnvironmentAPIGatewayStageName
       DefinitionBody:
         swagger: '2.0'
@@ -22,7 +22,7 @@ Resources:
               responses: {}
       EndpointConfiguration: REGIONAL
     Metadata:
-      StackeryName: newAPI
+      StackeryName: myApi
   function8E6C5467:
     Type: AWS::Serverless::Function
     Properties:
